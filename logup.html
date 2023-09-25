@@ -9,19 +9,35 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<!-- Logup.html (Pagina de Registro): En esta pagina, los usuarios pueden registrarse en la aplicacion. El formulario de registro debe incluir campos para nombre, apellidos, correo electronico, contraseña, confirmacion de  contraseña y direccion. Ademas, debe haber un boton para registrarse y una barra de navegacion que permita a los usuarios ir a la pagina de inicio de sesion (Login.html). -->
+<!-- Logup.html (Pagina de Registro): 
+  ✔En esta pagina, los usuarios pueden registrarse en la aplicacion. 
+  ✔El formulario de registro debe incluir campos para nombre, apellidos, correo electronico, contraseña, confirmacion de  contraseña y direccion. 
+  ✔Ademas, debe haber un boton para registrarse y una barra de navegacion que permita a los usuarios ir a la pagina de inicio de sesion (Login.html). -->
 
 <body>
   <!-- Encabezado -->
-  <header class="container-fluid d-flex justify-content-center" style="background-color: #EFAF96">
-    <p class="text-light mb-0 p-2 fs-3">Contactanos +57 319 555 4433</p>
+  <header class="container-fluid d-flex justify-content-center" style="background-color: #EFAF96  ">
+    <p class="text-light mb-0 fs-4">Contactanos +57 319 555 4433</p>
   </header>
+
+  <!-- Social media icon bar -->
+  <div class="icon-bar">
+    <a href="#">
+      <i class="bi bi-instagram"></i>
+    </a>
+    <a href="#">
+      <i class="bi bi-facebook"></i>
+    </a>
+    <a href="#">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+  </div>
 
   <!-- Inicio del menu -->
   <nav class="navbar navbar-expand-md">
     <div class="container-fluid">
       <a class="navbar-brand text-light fs-1 d-flex align-items-center" href="#">
-        <img src="./images/LogoPleyadesSL.png" alt="Logo" height="150" class="d-inline-block">
+        <img src="./images/LogoPleyadesSL.png" alt="Logo" height="100" class="d-inline-block">
         <div class=" d-inline-block align-items-center justify-content-center">
           <div class="text-center">PLEYADES</div> 
           <div class="text-center">{Magia y Luz}</div>
@@ -51,29 +67,11 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Servicios</a>
-          </li>
         </ul>
 
-        <ul class="navbar-nav flex-row flex-wrap text-light">
-          <li class="nav-item col-6 col-md-auto p-3">
-            <a href="#">
-              <i class="bi bi-instagram"></i>
-              <small class="d-md-none ms-2">Instagram</small>
-            </a>
-          </li>
-          <li class="nav-item col-6 col-md-auto p-3">
-            <a href="#">
-              <i class="bi bi-facebook"></i>
-              <small class="d-md-none ms-2">Facebook</small>
-            </a>
-          </li>
-          <li class="nav-item col-6 col-md-auto p-3">
-            <a href="#">
-              <i class="bi bi-whatsapp"></i>
-              <small class="d-md-none ms-2">WhatsApp</small>
-            </a>
+        <ul class="navbar-nav flex-column text-light me-4">
+          <li class="nav-item">
+            <a class="nav-link fs-6" id="nav-button" href="#">Iniciar Sesión</a>
           </li>
         </ul>
       </div>
@@ -85,7 +83,7 @@
     <!-- Formulario -->
     <section class="container pt-5 w-50">
       <div class="text-center mb-4">
-        <div><i class="bi bi-person-circle" style="color:#F08484; font-size: 70px;"></i></div>
+        <div><i class="bi bi-person-circle" style="color:#DC7A91; font-size: 70px;"></i></div>
         <h2>Regístrate</h2>
         <p>Estamos aqui para ayudarte a creer en la magia</p>
       </div>

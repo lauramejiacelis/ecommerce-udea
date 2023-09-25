@@ -9,19 +9,20 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<!-- Admin.html (Pagina de Administrador): Esta pagina esta destinada para el administrador del sitio web. Debe incluir una barra de navegacion con opciones como Inventario, Historial de compras y Generar registro de ventas. El administrador podra acceder a estas funciones de manera agil desde el menu. -->
+<!-- Admin.html (Pagina de Administrador): Esta pagina esta destinada para el administrador del sitio web. 
+  ✔Debe incluir una barra de navegacion con opciones como Inventario, Historial de compras y Generar registro de ventas. El administrador podra acceder a estas funciones de manera agil desde el menu. -->
 
 <body>
   <!-- Encabezado -->
-  <header class="container-fluid d-flex justify-content-center" style="background-color: #EFAF96">
-    <p class="text-light mb-0 p-1    fs-3">Contactanos +57 319 555 4433</p>
+  <header class="container-fluid d-flex justify-content-center" style="background-color: #EFAF96  ">
+    <p class="text-light mb-0 fs-4">Contactanos +57 319 555 4433</p>
   </header>
 
   <!-- Inicio del menu -->
   <nav class="navbar navbar-expand-md">
     <div class="container-fluid">
       <a class="navbar-brand text-light fs-1 d-flex align-items-center" href="#">
-        <img src="./images/LogoPleyadesSL.png" alt="Logo" height="170" class="d-inline-block">
+        <img src="./images/LogoPleyadesSL.png" alt="Logo" height="100" class="d-inline-block">
         <div class=" d-inline-block align-items-center justify-content-center">
           <div class="text-center">PLEYADES</div> 
           <div class="text-center">{Magia y Luz}</div>
@@ -35,13 +36,13 @@
       <div class="collapse navbar-collapse" id="menu">
         <ul class="navbar nav me-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Perfil</a>
+            <a class="nav-link" href="#">Inventario</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"  role="button" href="#">Carrito</a>
+            <a class="nav-link"  role="button" href="#">Historial de Compras</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Historial de Compras</a>
+            <a class="nav-link" href="#">Registro de ventas</a>
           </li>
         </ul>
 
@@ -49,7 +50,7 @@
           <li class="nav-item col-6 col-md-auto p-3">
             <a href="#">
               <i class="bi bi-gear-fill"></i>
-              <small class="d-md-none ms-2">Configuracion</small>
+              <small class="d-md-none ms-2">Configuración</small>
             </a>
           </li>
           <li class="nav-item col-6 col-md-auto p-3">
@@ -71,87 +72,33 @@
       </p>
     </section>
 
-    <!-- Productos -->
+    <!-- Opciones Administrador -->
     <div class="container-fluid">
       <!-- Fila 1 -->
       <div class="row w-75 mx-auto">
-        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center text-center">
-          <img src="./images/Velas (1).png" alt="" height="250">
+        <a class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center text-center">
+          <img src="./images/inventory-and-checklist-vector.png" alt="" height="250">
           <div>
-            <h3 class="fs-3 mt-4 px-4 pb-1">Vela lata | Calendula</h3>
-            <h4 class="fs-4 mt-4 px-4 pb-1">$30.000</h4>
+            <h3 class="fs-3 mt-4 px-4 pb-1">Inventario</h3>
             <p class="px-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus id ullam culpa nobis quod fuga perspiciatis earum.</p>
-            <p class="px-4">Puntuacion</p>
           </div>
-        </div>
-        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center text-center">
-          <img src="./images/Velas (2).png" alt="" height="250">
+        </a>
+
+        <a class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center text-center">
+          <img src="./images/HistorialCompras1.png" alt="" height="250">
           <div>
-            <h3 class="fs-3 mt-4 px-4 pb-1">Vela lata | Brillo</h3>
-            <h4 class="fs-4 mt-4 px-4 pb-1">$30.000</h4>
+            <h3 class="fs-3 mt-4 px-4 pb-1">Historial de Compras</h3>
             <p class="px-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus id ullam culpa nobis quod fuga perspiciatis earum.</p>
-            <p class="px-4">Puntuacion</p>
           </div>
-        </div>
-        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center text-center">
-          <img src="./images/Velas (3).png" alt="" height="250">
+        </a>
+
+        <a class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center text-center">
+          <img src="./images/RegistroVentas1.png" alt="" height="250">
           <div>
-            <h3 class="fs-3 mt-4 px-4 pb-1">Vela lata | Renacer</h3>
-            <h4 class="fs-4 mt-4 px-4 pb-1">$30.000</h4>
+            <h3 class="fs-3 mt-4 px-4 pb-1">Generar registro de ventas</h3>
             <p class="px-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus id ullam culpa nobis quod fuga perspiciatis earum.</p>
-            <p class="px-4">Puntuacion</p>
           </div>
-        </div>
-        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center text-center">
-          <img src="./images/Velas (4).png" alt="" height="250">
-          <div>
-            <h3 class="fs-3 mt-4 px-4 pb-1">Vela lata | Suenos</h3>
-            <h4 class="fs-4 mt-4 px-4 pb-1">$30.000</h4>
-            <p class="px-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus id ullam culpa nobis quod fuga perspiciatis earum.</p>
-            <p class="px-4">Puntuacion</p>
-          </div>
-        </div>
-        
-      </div>
-      <!-- Fila 2 -->
-      <div class="row w-75 mx-auto">
-        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center text-center">
-          <img src="./images/Velas (5).png" alt="" height="250">
-          <div>
-            <h3 class="fs-3 mt-4 px-4 pb-1">Vela lata | Sanacion</h3>
-            <h4 class="fs-4 mt-4 px-4 pb-1">$30.000</h4>
-            <p class="px-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus id ullam culpa nobis quod fuga perspiciatis earum.</p>
-            <p class="px-4">Puntuacion</p>
-          </div>
-        </div>
-        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center text-center">
-          <img src="./images/Velas (6).png" alt="" height="250">
-          <div>
-            <h3 class="fs-3 mt-4 px-4 pb-1">Vela esfera | Estrellas Binarias</h3>
-            <h4 class="fs-4 mt-4 px-4 pb-1">$40.000</h4>
-            <p class="px-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus id ullam culpa nobis quod fuga perspiciatis earum.</p>
-            <p class="px-4">Puntuacion</p>
-          </div>
-        </div>
-        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center text-center">
-          <img src="./images/Velas (7).png" alt="" height="250">
-          <div>
-            <h3 class="fs-3 mt-4 px-4 pb-1">Vela esfera | Luna</h3>
-            <h4 class="fs-4 mt-4 px-4 pb-1">$20.000</h4>
-            <p class="px-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus id ullam culpa nobis quod fuga perspiciatis earum.</p>
-            <p class="px-4">Puntuacion</p>
-          </div>
-        </div>
-        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center text-center">
-          <img src="./images/Velas (8).png" alt="" height="250">
-          <div>
-            <h3 class="fs-3 mt-4 px-4 pb-1">Vela esfera | Sol</h3>
-            <h4 class="fs-4 mt-4 px-4 pb-1">$20.000</h4>
-            <p class="px-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus id ullam culpa nobis quod fuga perspiciatis earum.</p>
-            <p class="px-4">Puntuacion</p>
-          </div>
-        </div>
-        
+        </a>
       </div>
 
     </div>
