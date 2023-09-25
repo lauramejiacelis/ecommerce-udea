@@ -12,47 +12,57 @@
 <!-- Home.html (Pagina de Inicio de Usuario Registrado): Esta pagina muestra la vista que un usuario registrado vera despues de iniciar sesion. 
   ✔Debe incluir una barra de navegacion con opciones desplegables, que incluyan: Perfil, Carrito, Historial de compras, Configuracion y Cerrar sesion. 
   ✔Los estudiantes deben programar una seccion donde se puedan mostrar productos de manera atractiva, similar a una tienda en línea como Amazon. 
-  Ademas, en todas las paginas, excepto en la de inicio de sesion y registro, debe aparecer un campo de busqueda de productos en el e-commerce (un input de busqueda). -->
+  ✔Ademas, en todas las paginas, excepto en la de inicio de sesion y registro, debe aparecer un campo de busqueda de productos en el e-commerce (un input de busqueda). -->
 
 <body>
   <!-- Encabezado -->
-  <header class="container-fluid d-flex justify-content-center" style="background-color: #EFAF96">
-    <p class="text-light mb-0 p-1    fs-3">Contactanos +57 319 555 4433</p>
+  <header class="container-fluid d-flex justify-content-center" style="background-color: #EFAF96  ">
+    <p class="text-light mb-0 fs-4">Contactanos +57 319 555 4433</p>
   </header>
 
   <!-- Inicio del menu -->
   <nav class="navbar navbar-expand-md">
     <div class="container-fluid">
       <a class="navbar-brand text-light fs-1 d-flex align-items-center" href="#">
-        <img src="./images/LogoPleyadesSL.png" alt="Logo" height="170" class="d-inline-block">
+        <img src="./images/LogoPleyadesSL.png" alt="Logo" height="100" class="d-inline-block">
         <div class=" d-inline-block align-items-center justify-content-center">
           <div class="text-center">PLEYADES</div> 
           <div class="text-center">{Magia y Luz}</div>
         </div>
       </a>
 
+      <form class="d-flex w-50" role="search">
+        <input class="form-control me-2" type="search" placeholder="Buscar productos..." aria-label="Search">
+        <button class="btn btn-outline-warning" type="submit" id="form-button">Buscar</button>
+      </form>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="menu">
-        <ul class="navbar nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Perfil</a>
+      <div class="collapse navbar-collapse d-flex justify-content-end" id="menu">
+        <ul class="navbar-nav flex-row flex-wrap text-light ">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" href="#">Mi cuenta</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="#">Mi Perfil</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Historial de compras</a>
+              </li>
+            </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link"  role="button" href="#">Carrito</a>
+          <li class="nav-item col-6 col-md-auto p-3">
+            <a href="#">
+              <i class="bi bi-cart"></i>
+              <small class="d-md-none ms-2">Carrito</small>
+            </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Historial de Compras</a>
-          </li>
-        </ul>
-
-        <ul class="navbar-nav flex-row flex-wrap text-light">
           <li class="nav-item col-6 col-md-auto p-3">
             <a href="#">
               <i class="bi bi-gear-fill"></i>
-              <small class="d-md-none ms-2">Configuracion</small>
+              <small class="d-md-none ms-2">Configuración</small>
             </a>
           </li>
           <li class="nav-item col-6 col-md-auto p-3">

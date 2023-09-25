@@ -1,6 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/a-alley-garden');
 
-body > header, body> nav, body>footer{
+body > header, body> nav > div > a, body>footer{
   font-family: 'a Alley Garden', sans-serif;
 }
 
@@ -15,8 +15,18 @@ nav{
 }
 
 #menu li > a {
-  font-size: xx-large;
+  font-size: x-large;
   text-decoration: none;
+  color: white;
+}
+
+.dropdown-item{
+  color: #F08484 !important;
+}
+
+#pleyades{
+  font-family: 'a Alley Garden', sans-serif;
+  color: #EFAF96;
 }
 
 .carousel-inner{
@@ -27,9 +37,20 @@ nav{
   color: #EFAF96;
 }
 
+#nav-button{
+  background-color: #F9A686; 
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+}
+#nav-button:hover {
+  background-color: #DC7A91;
+  color: white;
+}
+
 #form-button{
   background-color: #F08484; 
-  border: none;
+  border: 1px solid white;
   color: white;
 }
 #form-button:hover {

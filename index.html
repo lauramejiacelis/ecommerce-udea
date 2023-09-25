@@ -9,77 +9,86 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<!-- index.html (Página de Inicio): Esta página será la que se muestra
-por defecto al ingresar al sitio web. Debe contener informacián sobre su
-negocio de e-commerce ( Seccion de contacto, ¿Quienes somos? ). Los
-estudiantes deben utilizar Bootstrap para diseñar esta página de manera
-atractiva. -->
+<!-- index.html (Página de Inicio): Esta página será la que se muestra por defecto al ingresar al sitio web. 
+  ✔Debe contener informacián sobre su negocio de e-commerce ( Seccion de contacto, ¿Quienes somos? ). Los estudiantes deben utilizar Bootstrap para diseñar esta página de manera atractiva. -->
 
 <body>
   <!-- Encabezado -->
   <header class="container-fluid d-flex justify-content-center" style="background-color: #EFAF96  ">
-    <p class="text-light mb-0 p-2 fs-3">Contactanos +57 319 555 4433</p>
+    <p class="text-light mb-0 fs-4">Contactanos +57 319 555 4433</p>
   </header>
 
   <!-- Inicio del menu -->
   <nav class="navbar navbar-expand-md">
     <div class="container-fluid">
       <a class="navbar-brand text-light fs-1 d-flex align-items-center" href="#">
-        <img src="./images/LogoPleyadesSL.png" alt="Logo" height="150" class="d-inline-block">
+        <img src="./images/LogoPleyadesSL.png" alt="Logo" height="100" class="d-inline-block">
         <div class=" d-inline-block align-items-center justify-content-center">
           <div class="text-center">PLEYADES</div> 
           <div class="text-center">{Magia y Luz}</div>
         </div>
       </a>
 
+      <form class="d-flex w-50" role="search">
+        <input class="form-control me-2" type="search" placeholder="Buscar productos..." aria-label="Search">
+        <button class="btn btn-outline-warning" type="submit" id="form-button">Buscar</button>
+      </form>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="menu">
-        <ul class="navbar nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">¿Quienes Somos?</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" href="#">Productos</a>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" href="#">Velas en lata</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Esferas</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Formas</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Servicios</a>
-          </li>
-        </ul>
+      <div class="collapse navbar-collapse d-flex justify-content-end align-items-center" id="menu">
+        <div>
+          <ul class="navbar-nav flex-row flex-wrap text-light">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" href="#">Productos</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#">Velas en lata</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Esferas</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Formas</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
 
-        <ul class="navbar-nav flex-row flex-wrap text-light">
-          <li class="nav-item col-6 col-md-auto p-3">
-            <a href="#">
-              <i class="bi bi-instagram"></i>
-              <small class="d-md-none ms-2">Instagram</small>
-            </a>
-          </li>
-          <li class="nav-item col-6 col-md-auto p-3">
-            <a href="#">
-              <i class="bi bi-facebook"></i>
-              <small class="d-md-none ms-2">Instagram</small>
-            </a>
-          </li>
-          <li class="nav-item col-6 col-md-auto p-3">
-            <a href="#">
-              <i class="bi bi-whatsapp"></i>
-              <small class="d-md-none ms-2">Instagram</small>
-            </a>
-          </li>
-        </ul>
+        <div>
+          <ul class="navbar-nav flex-row flex-wrap text-light">
+            <li class="nav-item">
+              <a class="nav-link fs-6 me-1" id="nav-button" href="#">Login </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-6" id="nav-button" href="#">Registrarme</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav flex-row flex-wrap text-light">
+            <li class="nav-item col-6 col-md-auto p-3">
+              <a href="#">
+                <i class="bi bi-instagram"></i>
+                <small class="d-md-none ms-2">Instagram</small>
+              </a>
+            </li>
+            <li class="nav-item col-6 col-md-auto p-3">
+              <a href="#">
+                <i class="bi bi-facebook"></i>
+                <small class="d-md-none ms-2">Facebook</small>
+              </a>
+            </li>
+            <li class="nav-item col-6 col-md-auto p-3">
+              <a href="#">
+                <i class="bi bi-whatsapp"></i>
+                <small class="d-md-none ms-2">WhatsApp</small>
+              </a>
+            </li>
+          </ul>
+        </div>
+
       </div>
       
     </div>
@@ -128,15 +137,20 @@ atractiva. -->
 
     <!-- INTRO -->
     <section class="w-75 mx-auto text-center pt-5">
-      <h1 class="p-3 fs-2 border-top border-3">Estamos convencidos de que el planeta será un lugar mejor, si siempre regalas <span class="colorBrand1">un poco de tu luz al mundo…</span></h1>
-      <p class="p-3 fs-4">Creemos en que todos tenemos un guía interior, sabiduría y magia… Queremos darte las herramientas para hacer tus pequeños y grandes rituales, <span class="colorBrand1"> para conectar contigo y encontrar tu mejor versión...</span>
+      <p class="pt-3 fs-4 border-top border-3">Somos</p>
+      <div class=" d-inline-block align-items-center justify-content-center fs-2" id="pleyades">
+          <div class="text-center">PLEYADES</div> 
+          <div class="text-center">{Magia y Luz}</div>
+        </div>
+      <p class="p-2 fs-4">Estamos convencidos de que el planeta será un lugar mejor, si siempre regalas <span class="colorBrand1">un poco de tu luz al mundo…</span></p>
+      <p class="p-2 fs-4">Creemos en que todos tenemos un guía interior, sabiduría y magia… Queremos darte las herramientas para hacer tus pequeños y grandes rituales, <span class="colorBrand1"> para conectar contigo y encontrar tu mejor versión...</span>
       </p>
 
     </section>
 
     <!-- ACERCA DE NOSOTROS -->
     <section class="w-75 mx-auto text-center pt-5">
-      <h1 class="p-3 fs-2 border-top border-3">Equipo pequeño con <span class="colorBrand1"> resultados grandes!!!</span></h1>
+      <h2 class="p-3 fs-2 border-top border-3">Equipo pequeño con <span class="colorBrand1"> resultados grandes!!!</span></h2>
       <p class="p-3 fs-4">Cada uno de nuestros productos es trabajado artesanalmente con mucho <span class="colorBrand1"> amor</span>
       </p>
       <img class="img-fluid" src="./images/vender-velas-online.jpg" alt="">
@@ -144,7 +158,7 @@ atractiva. -->
   </main>
 
   <footer class="w-100 pt-3 mt-5 fs-4 d-flex align-items-center justify-content-center">
-    <p>Pléyades E-commerce built by Laura Mejia Celis &copy; Todos los derechos reservados 2023</p>
+    <p>Pléyades E-commerce built by Laura Mejía Celis &copy; Todos los derechos reservados 2023</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
