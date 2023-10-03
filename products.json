@@ -1,6 +1,6 @@
 [
   {
-    "_id": "1",
+    "id": "1",
     "name": "Caléndula",
     "image": "./images/Velas (1).png",
     "description":
@@ -15,7 +15,7 @@
     "numReviews": 12
   },
   {
-    "_id": "2",
+    "id": "2",
     "name": "Afrodita",
     "image": "./images/Velas (2).png",
     "description":
@@ -30,7 +30,7 @@
     "numReviews": 8
   },
   {
-    "_id": "3",
+    "id": "3",
     "name": "Renacer",
     "image": "./images/Velas (3).png",
     "description":
@@ -45,7 +45,7 @@
     "numReviews": 12
   },
   {
-    "_id": "4",
+    "id": "4",
     "name": "Sueños",
     "image": "./images/Velas (4).png",
     "description":
@@ -60,7 +60,7 @@
     "numReviews": 12
   },
   {
-    "_id": "5",
+    "id": "5",
     "name": "Sanación",
     "image": "./images/Velas (5).png",
     "description":
@@ -75,7 +75,7 @@
     "numReviews": 10
   },
   {
-    "_id": "6",
+    "id": "6",
     "name": "Estrellas Binarias",
     "image": "./images/Velas (6).png",
     "description":
@@ -90,7 +90,7 @@
     "numReviews": 2
   },
   {
-    "_id": "7",
+    "id": "7",
     "name": "Paz",
     "image": "./images/Velas (7).png",
     "description":
@@ -105,7 +105,7 @@
     "numReviews": 2
   },
   {
-    "_id": "8",
+    "id": "8",
     "name": "Vitalidad",
     "image": "./images/Velas (8).png",
     "description":

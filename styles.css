@@ -87,6 +87,17 @@ nav{
   color: white;
 }
 
+/* #buttonAdd{
+  background-color: #F9A686; 
+  border: 1px solid white;
+  color: white;
+  font-weight: bold;
+}
+#buttonAdd:hover {
+  background-color: #F08484;
+  color: white;
+} */
+
 div>div>a{
   text-decoration: none;
   color: #262626;
