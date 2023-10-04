@@ -1,9 +1,9 @@
 const products = document.getElementById('products')
 const items = document.getElementById('items')
-const prices = document.getElementById('prices')
+const cartFooter = document.getElementById('cart-footer')
 const templateCard = document.getElementById('template-card').content
 const templateCart = document.getElementById('template-cart').content
-const templatePrices = document.getElementById('template-prices').content
+const templateCartFooter = document.getElementById('template-cart-footer').content
 const fragment = document.createDocumentFragment()
 let cart = {};
 
@@ -16,7 +16,7 @@ Utilizar eventos y funciones en JavaScript para lograr esta carga dinámica. */
 // El evento DOMContentLoaded es disparado cuando el documento HTML ha sido completamente cargado y parseado
 document.addEventListener('DOMContentLoaded', () => { fetchData() });
 products.addEventListener('click', e => { addToCart(e) });
-//products.addEventListener('click', e => { btnAumentarDisminuir(e) })
+items.addEventListener('click', e => { btnAddDecrease(e) })
 
 // Traer productos
 const fetchData = async () => {
@@ -51,12 +51,13 @@ const addToCart = e => {
   }
 }
 
+//Crear el carrito
 const setCart = (obj) =>{
   console.log(obj)
   const product= {
     id: obj.querySelector('.btn-warning').dataset.id,
     name: obj.querySelector('h4').textContent,
-    price: obj.querySelector('h5').textContent,
+    price: parseInt(obj.querySelector('h5').textContent),
     quantity: 1
   }
 
@@ -69,9 +70,74 @@ const setCart = (obj) =>{
   paintCart()
 }
 
+//Pintar el carrito
 const paintCart = () =>{
   console.log(cart)
+  items.innerHTML = ''
   Object.values(cart).forEach(product=>{
     templateCart.querySelector('th').textContent = product.id
+    templateCart.querySelectorAll('td')[0].textContent = product.name
+    templateCart.querySelectorAll('td')[1].textContent = product.quantity
+    templateCart.querySelector('.btn-info').dataset.id = product.id
+    templateCart.querySelector('.btn-danger').dataset.id = product.id
+    templateCart.querySelector('span').textContent = product.quantity * product.price
+
+
+    const clone = templateCart.cloneNode(true)
+    fragment.appendChild(clone)
   })
+  items.appendChild(fragment)
+
+  paintCartFooter()
+}
+
+//Pintar los totales del carrito
+const paintCartFooter = ()=> {
+  cartFooter.innerHTML = ''
+  if (Object.keys(cart).length === 0){
+    cartFooter.innerHTML= `
+      <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+    `
+    return
+  }
+  const totalQuantity = Object.values(cart).reduce((acc, {quantity})=> acc+quantity, 0)
+  
+  const totalPrice = Object.values(cart).reduce((acc, {quantity,price})=> acc + quantity * price, 0)
+  
+  templateCartFooter.querySelectorAll('td')[0].textContent = totalQuantity
+  templateCartFooter.querySelector('span').textContent = totalPrice
+
+  const clone = templateCartFooter.cloneNode(true)
+  fragment.appendChild(clone)
+  cartFooter.appendChild(fragment)
+
+  const btnEmptyCart = document.getElementById("empty-cart")
+  btnEmptyCart.addEventListener('click', ()=>{
+    cart= {}
+    paintCart()
+  })
+}
+
+//Botones dentro del carrito 
+const btnAddDecrease = e => {
+  //console.log(e.target)
+  if(e.target.id === 'addProducts'){
+    console.log(cart[e.target.dataset.id])
+    const product = cart[e.target.dataset.id]
+    product.quantity++
+    cart[e.target.dataset.id] = {...product}
+    paintCart()
+  }
+
+  if(e.target.id === 'substractProducts'){
+    console.log(cart[e.target.dataset.id])
+    const product = cart[e.target.dataset.id]
+    product.quantity--
+    if(product.quantity === 0){
+      delete cart[e.target.dataset.id]
+    }
+    paintCart()
+  }
+
+  e.stopPropagation()
 }
