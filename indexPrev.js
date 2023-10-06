@@ -1,5 +1,3 @@
-import productsList from "./productsList.js"
-
 const renderCart = document.getElementById('renderCart')
 const products = document.getElementById('products')
 const itemsOnCart = document.getElementById('itemsOnCart')
@@ -17,18 +15,22 @@ Utilizar eventos y funciones en JavaScript para lograr esta carga dinámica. */
 
 // Eventos
 // El evento DOMContentLoaded es disparado cuando el documento HTML ha sido completamente cargado y parseado
-document.addEventListener('DOMContentLoaded', () => { createCards(productsList) });
+document.addEventListener('DOMContentLoaded', () => { fetchData() });
 products.addEventListener('click', e => { addToCart(e) });
 itemsOnCart.addEventListener('click', e => { btnAddDecrease(e) })
 
 // Traer productos
-console.log(productsList)
-//createCards(productsList)
+const fetchData = async () => {
+    const res = await fetch('products.json');
+    const data = await res.json()
+    //console.log(data)
+    createCards(data)
+}
 
 //Pintar productos
 const createCards = data =>{
   data.forEach(product => {
-    console.log(product)
+    //  console.log(product)
     templateCard.querySelector('img').setAttribute("src", product.image)
     templateCard.querySelector('h4').textContent = product.name
     templateCard.getElementById('count-in-stock').textContent = product.countInStock
@@ -63,8 +65,7 @@ const addToCart = e => {
   //console.log(e.target.classList.contains('btn-warning'))
   if(e.target.classList.contains('btn-warning')){
     setCart(e.target.parentElement.parentElement)
-    console.log(e.target.parentElement.parentElement)
-    //console.log(e.target.parentElement.parentElement.querySelector('img').getAttribute("src"))
+    console.log(e.target.parentElement.parentElement.querySelector('img').getAttribute("src"))
   }
 }
 
@@ -83,8 +84,6 @@ const setCart = (obj) =>{
   if(cart.hasOwnProperty(product.id)){
     product.quantity= cart[product.id].quantity + 1
     product.countInStock= cart[product.id].countInStock - 1
-
-    //aquí cuando el product.id = id del productList restar al count in stock
   }
 
   cart[product.id] = {...product}

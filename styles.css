@@ -6,12 +6,12 @@ body > header, body> nav > div > a, body>footer{
 
 /* Fixed/sticky icon bar  */
 .icon-bar {
-  position: fixed;
-  top: 0;
+  position: fixed; 
+  bottom: 0;
   right: 0;
-  z-index: 3;
+  z-index: 3 ; 
   background-color: #DC7A91;
-  border-radius: 0 0 0 5px;
+  border-radius: 5px 0 0 5px;
 }
 
 /* Style the icon bar links */
@@ -87,16 +87,36 @@ nav{
   color: white;
 }
 
-/* #buttonAdd{
+#pay-button{
+  background-color: #F08484; 
+  border: 1px solid white;
+  color: white;
+}
+#pay-button:hover {
+  background-color: #F9A686;
+  color: white;
+}
+
+#empty-cart{
+  background-color: #9D98AE; 
+  border: 1px solid white;
+  color: white;
+}
+#empty-cart:hover {
+  background-color: gray;
+  color: white;
+}
+
+#template-card>button{
   background-color: #F9A686; 
   border: 1px solid white;
   color: white;
   font-weight: bold;
 }
-#buttonAdd:hover {
+#template-card>button:hover {
   background-color: #F08484;
   color: white;
-} */
+} 
 
 div>div>a{
   text-decoration: none;
