@@ -10,10 +10,15 @@ const templateCartFooter = document.getElementById('template-cart-footer').conte
 const fragment = document.createDocumentFragment()
 let cart = {};
 
-/*✔ 4. Carga Dinámica de Elementos:
-Modificar la página de inicio (Home.html) para cargar dinámicamente los productos desde una estructura de datos en JavaScript, sin utilizar librerías o frameworks adicionales.
-Los productos deben incluir al menos una imagen, un nombre, una descripción y un precio.
-Utilizar eventos y funciones en JavaScript para lograr esta carga dinámica. */
+/* 
+3. Gestión de Inventarios:
+✔Crear un sistema de inventario sencillo que almacene la cantidad disponible de cada producto.
+✔Cuando un producto se agrega al carrito, la cantidad disponible debe reducirse.
+✔Cuando un producto se elimina del carrito, la cantidad disponible debe aumentar.
+4. Carga Dinámica de Elementos:
+✔Modificar la página de inicio (Home.html) para cargar dinámicamente los productos desde una estructura de datos en JavaScript, sin utilizar librerías o frameworks adicionales.
+✔Los productos deben incluir al menos una imagen, un nombre, una descripción y un precio.
+✔Utilizar eventos y funciones en JavaScript para lograr esta carga dinámica. */
 
 // Eventos
 // El evento DOMContentLoaded es disparado cuando el documento HTML ha sido completamente cargado y parseado
@@ -28,7 +33,7 @@ console.log(productsList)
 //Pintar productos
 const createCards = data =>{
   data.forEach(product => {
-    console.log(product)
+    //console.log(product)
     templateCard.querySelector('img').setAttribute("src", product.image)
     templateCard.querySelector('h4').textContent = product.name
     templateCard.getElementById('count-in-stock').textContent = product.countInStock
@@ -54,7 +59,7 @@ const addToCart = e => {
   products.parentElement.classList.remove('col')
   products.parentElement.classList.add('col-md-8')
   renderCart.classList.remove('d-none')
-  console.log(templateCard.firstElementChild)
+  //console.log(templateCard.firstElementChild)
   products.firstElementChild.classList.remove('col-xl-3')
   products.firstElementChild.classList.remove('col-lg-4')
   products.firstElementChild.classList.remove('col-sm-12')
@@ -63,31 +68,42 @@ const addToCart = e => {
   //console.log(e.target.classList.contains('btn-warning'))
   if(e.target.classList.contains('btn-warning')){
     setCart(e.target.parentElement.parentElement)
-    console.log(e.target.parentElement.parentElement)
+    //console.log(e.target.parentElement.parentElement)
     //console.log(e.target.parentElement.parentElement.querySelector('img').getAttribute("src"))
   }
 }
 
-//Crear el carrito
+//Empujar el objeto al carrito
 const setCart = (obj) =>{
-  console.log(obj)
+  //console.log(obj)
   const product= {
     id: obj.querySelector('.btn-warning').dataset.id,
     img: obj.querySelector('img').getAttribute("src"),
     name: obj.querySelector('h4').textContent,
     price: parseInt(obj.querySelector('span').textContent),
     quantity: 1,
-    countInStock: parseInt(obj.querySelector('#count-in-stock').textContent)
+    countInStock: parseInt(obj.querySelector('#count-in-stock').textContent)-1
   }
-
+  //Incrementa la cantidad del producto cuando ya existe y la saca del inventario
+  console.log(cart.hasOwnProperty(product.id))
   if(cart.hasOwnProperty(product.id)){
+    console.log(cart.hasOwnProperty(product.id))
     product.quantity= cart[product.id].quantity + 1
     product.countInStock= cart[product.id].countInStock - 1
-
-    //aquí cuando el product.id = id del productList restar al count in stock
+    productsList[product.id].countInStock -= 1 //manejo de inventario
   }
 
   cart[product.id] = {...product}
+
+  //aquí cuando el product.id = id del productList restar al count in stock (inventarios)
+  productsList.find((element)=> {
+    if(element.id === product.id){
+      element.countInStock = element.countInStock - 1
+      console.log(element)
+    }
+  })
+  console.log(productsList)
+  createCards(productsList)
 
   paintCart()
 }
@@ -97,14 +113,13 @@ const paintCart = () =>{
   console.log(cart)
   itemsOnCart.innerHTML = ''
   Object.values(cart).forEach(product=>{
-    //templateCart.querySelector('th').textContent = product.id
     templateCart.querySelector('img').setAttribute("src", product.img)
     templateCart.getElementById('cart-item-name').textContent = product.name
     templateCart.getElementById('cart-item-qty').textContent = product.quantity
     templateCart.getElementById('addProducts').dataset.id = product.id
     templateCart.getElementById('substractProducts').dataset.id = product.id
     templateCart.getElementById('cart-item-price').textContent = (product.quantity * product.price).toLocaleString("es")
-
+    templateCart.getElementById('count-in-stock-cart').textContent = product.countInStock
 
     const clone = templateCart.cloneNode(true)
     fragment.appendChild(clone)
@@ -148,6 +163,7 @@ const btnAddDecrease = e => {
     console.log(cart[e.target.parentElement.dataset.id])
     const product = cart[e.target.parentElement.dataset.id]
     product.quantity++
+    product.countInStock--
     cart[e.target.parentElement.dataset.id] = {...product}
     paintCart()
   }
@@ -156,6 +172,7 @@ const btnAddDecrease = e => {
     console.log(cart[e.target.parentElement.dataset.id])
     const product = cart[e.target.parentElement.dataset.id]
     product.quantity--
+    product.countInStock++
     if(product.quantity === 0){
       delete cart[e.target.parentElement.dataset.id]
     }

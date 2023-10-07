@@ -85,7 +85,7 @@ const productsList = [
     Crystal: false,
     category: 'Esferas',
     price: 40000,
-    countInStock: 0,
+    countInStock: 20,
     rating: 4,
     numReviews: 2,
   },
