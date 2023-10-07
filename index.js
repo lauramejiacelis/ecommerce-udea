@@ -103,7 +103,6 @@ const setCart = (obj) =>{
     }
   })
   console.log(productsList)
-  createCards(productsList)
 
   paintCart()
 }
